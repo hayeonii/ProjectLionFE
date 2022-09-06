@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+
+
+    <img src="jeju.jpg" alt="">
+    <!-- 스크린 리더가 읽지 않습니다 -->
+    <!-- 상대경로: 현재 폴더에 jeju.jpg -->
+    <img src="./img/jeju.jpg">
+    <!-- 스크린 리더가 'a'를 읽습니다 -->
+    <!-- 상대경로: 상위 폴더 > img 폴더 > jeju.jpg -->
+    <img src="./img/jeju.jpg" alt="이미지">
+    <!-- 스크린 리더가 '이미지'를 읽습니다 -->
+    <!-- 절대경로 -->
+    <img src="http://www.paullab.co.kr/images/ceo.png" alt="이미지" />
+    <img src="C:\Users\paullab\Desktop\FE3\HTML\jeju.jpg" alt="이미지" />
+    <!-- 폴더 구조도 절대경로가 될 수 있음 -->
+
+    <img
+    width="200px"
+    srcset="img/logo_1.png 2x,
+            img/logo_2.png 3x"
+    src="./img/jeju.jpg"
+    alt="test">
+    <!-- srcset : 해상도 고려, w로 표시하지 않고 픽셀(x)로 표시 -->
+</body>
+</html>

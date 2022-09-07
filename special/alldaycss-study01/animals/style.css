@@ -1,0 +1,59 @@
+/* reset */
+h1, p {
+    margin: 0;
+}
+
+img {
+    vertical-align: top;
+}
+/* display: block;도 가능한데 이미지의 고유 특성도 없어지는 것이기 때문에 초기화 할 때는 부담이 있음 */
+
+/* wrapper: Layouts만 담당한다 시각적인 요소(디자인적요소)는 빼야함! */
+.wrapper {
+    width: 300px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 100px auto;
+    /* 고정 마진을 주는 게 안정적 상태 */
+}
+
+/* 꾸미는 요소는 background-image로 처리해도 상관없음 */
+/* 굳이 마크업으로 넣을 필요가 없음 왜냐면 보여주고 싶은 정보가 아니기 때문! */
+
+body {
+    background-image: url(images/bg.png);
+}
+.animal {
+
+}
+
+.ground {
+    background-image: url(images/green.png);
+    background-repeat: repeat-x;
+    background-color: #9c6133;
+    color: #d2baad;
+    padding: 80px 30px 30px 30px;
+    border-radius: 0 0 26px 26px;
+    border-bottom: 10px solid #4a260b;
+}
+/* 되도록이면 한 요소에 padding으로 깔끔하게! */
+
+.ground h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+/* animal과 ground 사이의 여백
+    마진 겹침 현상
+    블록레벨 엘리먼츠와 블록레벨 엘리먼츠 사이에 인접해있는 상하단 마진은 겹쳐 표현 - 의도된 동작
+    좌우 마진은 일어나지 않음
+    마진 겹침은 큰 쪽으로 일어남
+    a 30px b 40px 마진이면 40px 마진 잡힘
+    블록요소끼리만 일어나는 현상
+ */
+
+/* 자식의 margin-top이 부모의 바깥으로 나갈 수 없음
+display: flow-root; 
+주면 부모와 자식의 마진 겹침 현상 해결할 수 있음
+가장 일반적인 방향임 */

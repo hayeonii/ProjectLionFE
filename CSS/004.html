@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- Q. 만약 같은 요소에 inline방식과 외부 스타일, 내부 스타일 모두 적용된다면 어떤 순서로 적용이 되나요? -->
+    <!-- 해당 태그로부터 가까운 것부터 적용됨 -->
+    <link rel="stylesheet" href="004.css">
+    <style>
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: green">hello world</h1>
+</body>
+</html>

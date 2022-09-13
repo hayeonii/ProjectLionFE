@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* 마진겹침현상은 일부러 의도한 CSS */
+        /* 대부분의 경우 문제로 여겨지지 않고, 해결하지 않아도 되는 파트이다. */
+
+        /* 형제간의 마진 겹침현상 */
+        /* nth-child() 유튜브 https://www.youtube.com/watch?v=4p7gPzAtVqc */
+        div:nth-child(1) {
+            margin-bottom: 30px;
+        }
+
+        div:nth-child(2) {
+            margin-top: 60px;
+        }
+        /* 60px의 마진이 겹치게 됨 */
+    </style>
+</head>
+<body>
+    <div>hello</div>
+    <div>hello</div>
+</body>
+</html>

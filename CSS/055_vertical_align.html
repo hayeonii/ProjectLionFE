@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        .container {
+            border: 1px solid black;
+            line-height: 1;
+            /* line-height: 1 = half-leading 제거 = 폰트 사이즈 */
+        }
+        .one {
+            /* vertical-align: baseline; */
+            /* vertical-align의 초기값 */
+
+            /* vertical-align: top; */
+            /* vertical-align: middle; */
+            font-size: 10px;
+        }
+        .two {
+            font-size: 20px;
+        }
+        .three {
+            font-size: 40px;
+        }
+        img {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        testtest
+        <!-- <sub>hello</sub> -->
+        <!-- <sup>lions</sup> -->
+        <span class="one">Lorem ipsum</span>
+        <span class="two">dolor sit amet</span>
+        <span class="three">consectetur adipisicing</span>    
+    </div>
+    <div class="container">
+        <img width="100px" src="https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg" alt="">
+        <!-- vertical-align: top 사용 안하면 공간 생기는 이유: inline 요소이기 때문에 -->
+        <!-- 인라인=글씨=베이스라인을 갖고있다=베이스라인이 있겠거니~~하고 공간이생김 -->
+        <!-- top/bottom을 주게 되면 baseline을 제어할 수 있음 -->
+        <!-- 다른 방법으론 display: block;을 주는 방법이 있음 -->
+    </div>
+</body>
+</html>
+
+<!-- vertical-align: top / bottom 가장 많이 씀 -->
+<!-- text-top / top 차이 but sub/sup/text-top/text-bottom/middle 잘 안씀 ㅎㅎ -->
+<!-- vertical-align 반드시 인라인 속성에서만 적용됨 -->

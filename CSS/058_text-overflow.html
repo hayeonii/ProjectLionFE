@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* 한 줄 말줄임 코드입니다. */
+
+    p {
+        width:300px;     
+        /* p 태그의 크기를 제한합니다. */
+        /* overflow:hidden;  */
+        /* 요소를 넘어가는 컨텐츠를 숨깁니다. */
+            
+        /* white-space:nowrap;  */
+        /* 텍스트의 공백을 만났을때 어떻게 처리할지 설정하는 속성입니다. nowrap은 공백을 만나도 줄바꿈하지 않습니다.*/
+        
+        /* text-overflow:ellipsis;  */
+        /* 요소의 크기를 넘친 텍스트를 말줄임 처리합니다. */
+        /* overflow:hidden, white-space:nowrap 속성이 같이 사용되어야 합니다. */
+        /* 한줄 말줄임 */
+    }
+
+    /* 여러줄 말줄임 코드입니다. */
+    /* -webkit-box, -webkit-box-orient 속성은 웹표준 속성이 아닙니다. 
+    앞으로 삭제되거나 기능이 변경될 수 있기 때문에 주의가 필요합니다. */
+    /* 아직은 이 기술로 표현할 수밖에 없음 */
+
+    p {
+        overflow: hidden;
+        /* 자식요소들의 배치를 지정하는 속성입니다. flex의 예전 버전입니다. */
+
+        display:-webkit-box;
+        /* flex의 예전 버전 */
+
+        -webkit-line-clamp: 2; 
+        /*  블록 컨텐츠의 라인 수를 제한하는 속성입니다.*/
+        
+        /* 자식요소들의 배치를 수직으로 만드는 속성입니다. flex-direction의 예전 버전입니다. */
+        -webkit-box-orient: vertical;
+    }
+
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?</p>
+</body>
+</html>

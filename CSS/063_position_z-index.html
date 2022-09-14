@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        /* 어떤 요소가 더 위로 나타나게 할지 결정할때 사용 */
+        /* 쓰지 않으면 최근에 만들어 진 것이 가장 위에 */
+        /* 마이너스는 -1 값만 줄 수 있음 */
+        /* static에는 사용 불가 */
+        /* 부모가 자식 앞으로 나올 수 없음, 자식은 부모 뒤로 가는 것 가능 */
+        /* 자식 요소의 z-index값은 부모 요소보다 클 수 없음 */
+        /* z-index 값이 같으면 만들어진 순서대로 */
+
+        div {
+            /* 같이 움직이는지 확인 */
+            /* margin: 100px; */
+            width: 800px;
+            height: 800px;
+            position: relative;
+            background-color: blanchedalmond;
+            border: 1px solid black;
+            /* 부모에 달아도 수정이 안됨 */
+            /* z-index: 1; */
+        }
+
+        img {
+            padding: 10px;
+            position: absolute;
+        }
+
+        img:nth-child(1) {
+            top: 100px;
+            left: 100px;
+            background-color: red;
+            /* 자식에게 값을 주면 부모 뒤로 감 */
+            z-index: 0;
+        }
+
+        img:nth-child(2) {
+            top: 150px;
+            left: 150px;
+            background-color: green;
+            z-index: 0;
+        }
+
+        img:nth-child(3) {
+            top: 200px;
+            left: 200px;
+            background-color: blue;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://via.placeholder.com/300" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/500" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCYPE html>
+<html>
+<head>
+    <title>텍스트 정렬</title>
+    <style>
+    .text_center{
+        text-align: center;
+    }
+    .text_left{
+        text-align: left;
+    }
+    .text_right{
+        text-align: right;
+    }
+    .text_justify{
+        text-align: justify;
+    }
+        
+    </style>
+    </head>
+    <body>
+    <div class="text_left">
+        <span>왼쪽 정렬</span>
+        <!-- text-align의 initial값 -->
+    </div>
+    <div class ="text_right">
+        <span>오른쪽 정렬</span>
+    </div>
+    <div class="text_center">
+        <span>가운데 정렬</span>
+    </div>
+    <div class="text_justify">
+        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi error cumque unde cupiditate delectus rem inventore fugiat sapiente culpa aliquam repellendus sequi tempore animi, vitae velit blanditiis tenetur autem accusamus?</span>
+    </div>
+    </body>
+</html>
+
+<!-- text-align은 블록요소 안에 있는 인라인 요소/인라인 블록 요소에 적용이 된다 -->
+<!-- 세로 정렬:
+    재현 강사님은 line-height값을 height값과 똑같이 하는 방법으로 함! but 내용이 두 줄 이상일 때는 되지 않음
+    line-height는 줄과 줄 사이의 간격이기 때문에
+    따라서 한 줄을 가운데로 할 때 쓰기 good
+    
+    굳이 높이갚 주지 않아도 괜찮음 
+    button은 자동으로 수직/수평 정렬됨 -->
+
+    <!-- 
+    - 버튼에 width랑 height를 준 것이랑 그냥 padding을 준 것이랑 어떠한 차이가 있을까요?
+        1 컨텐츠박스가 늘어나는가, 컨텐츠박스 외의 패딩이 늘어나는가
+        2 텍스트가 늘어날수록 넓이 자체가 늘어남: 패딩
+        3 버튼의 넓이 고정: 넓이/높이
+        4 버튼에 넓이와 높이를 잘 설정하지 않는다 
+-->

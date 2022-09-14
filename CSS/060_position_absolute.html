@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relative-absolute</title>
+<style>
+
+.box1{
+    position:relative;
+    top:40px;
+    background-color: green;
+    color:white;
+    width: 100px;
+    height: 100px;
+}
+
+.box2{
+    position:absolute;
+    top: 40px;
+    background-color: red;
+    color:white;
+    width: 100px;
+    height: 100px;
+}
+
+.box3{
+    position: absolute;
+		top: 30px;
+    left: 30px;
+    background-color: blue;
+    color:white;
+    width: 100px;
+    height: 100px;
+}
+</style>
+</head>
+<body>
+    <div class="box3">box3</div>
+    <div class="box1">box1
+        <div class="box2">
+            box2
+        </div>
+    </div>
+    <!-- absolute는 position:static을 제외한 가장 가까운 부모 요소 기준으로 움직임 -->
+    <!-- 부모가 없으면 html기준!! -->
+    <!-- 스태틱이 아닌 다른 포지션이 들어가있는 부모요소를 찾아서 절대 위치로 삼는다고 해석해도 될까요? -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* 크롬 개발자 도구 열어보면 가상 요소로 추가되어있음 */
+        p::before {
+            /* content: '이번 달 월급은 '; */
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            content: "";
+        }
+        p::after {
+            content: '만원';
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        가상 클래스 선택자 : 클래스가 없는데 있는 것처럼 처리(콜론이 1개입니다.)
+        가상 요소 선택자 : 요소가 없는데 있는 것처럼 처리(콜론이 2개입니다.)
+    -->
+    <!-- 
+        접근성 고려사항
+        CSS로 생성한 콘텐츠는 DOM이 포함하지 않고, 접근성 트리에도 들어가지 않는다
+        따라서 접근성, 읽어야되는 콘텐츠는 CSS로 컨트롤하지 않는 것이 좋다
+    -->
+    <p>1000</p>
+</body>
+</html>

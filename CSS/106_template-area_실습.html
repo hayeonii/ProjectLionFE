@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            display: grid;
+            /* grid-template-columns: repeat(4, 1fr); */
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                '.      .       time'
+                'header header header'
+                'aside-l main aside-r'
+                'footer footer footer';
+            }
+
+            /* 
+            grid-template-areas:
+                    ".       .       .       time"
+                    "header  header  header  header"
+                    "aside-a main    main    aside-b"
+                    "footer  footer  footer  footer";
+                    넓이 조절할 때는 이렇게 주는 것이 더 좋다
+            */
+
+        time {
+            grid-area: time;
+            background-color: lightblue;
+        }
+
+        header {
+            grid-area: header;
+            background-color: lightcoral;
+        }
+
+        main {
+            grid-area: main;
+            background-color: lightgreen;
+        }
+
+        .aside-l {
+            grid-area: aside-l;
+            background-color: lightseagreen;
+        }
+
+        .aside-r {
+            grid-area: aside-r;
+            background-color: lightslategray;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: bisque;
+        }
+
+    </style>
+</head>
+<body>
+    <time>22-09-19</time>
+    <header>header</header>
+    <main>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fugiat tempore autem impedit, vel neque suscipit. Beatae vitae reprehenderit itaque magnam dolore dolorem voluptatibus, illo quidem facere sit culpa eaque.</main>
+    <aside class="aside-l">aside</aside>
+    <aside class="aside-r">aside</aside>
+    <footer>footer</footer>
+</body>
+</html>

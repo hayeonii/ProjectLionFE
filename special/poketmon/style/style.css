@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+#app {
+    width: 100vw;
+    height: 100vw;
+    perspective: 1600px;
+}
+
+/* perspective를 넣으려면 container로 넣으면 된다 */
+/* 손자들까지 속성 넣으려면 transform-style: preserved-3d; 속성 넣어야 한다 */
+.list-item {
+    position: fixed;
+    width: 340px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    /* ul 요소의 넓이를 알지 못해도 알아서 절반만큼 움직이게 해 줌 */
+    /* margin: -200px 0 0 -170px; */
+    /* 마진은 넓이와 높이값을 알아야 적용이 가능하기 때문에 transform-translate를 이용해 이동시킨다 */
+    transform: translate(-50%, -50%) rotateY(100deg);
+    /* transform: translate(-50%, -50%) rotateY(); 하면 가로로 돌아감*/
+    transform-style: preserve-3d;
+}
+
+.list-item li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 뒤요소 안보이게 */
+    backface-visibility: hidden;
+}
+
+.list-item li img {
+    /* img 태그에서의 background-size와 같다 */
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* 반지름의 길이 */
+.list-item li:nth-child(1) {
+    transform: rotateY(0) translateZ(calc(340px*7/3.14/2));
+}
+
+/* 360deg / 아이템의 갯수 */
+.list-item li:nth-child(2) {
+    transform: rotateY(calc(360deg/7)) translateZ(calc(340px*7/3.14/2));
+}
+
+.list-item li:nth-child(3) {
+    transform: rotateY(calc(360deg/7*2)) translateZ(calc(340px*7/3.14/2));
+}
+
+.list-item li:nth-child(4) {
+    transform: rotateY(calc(360deg/7*3)) translateZ(calc(340px*7/3.14/2));
+}
+
+.list-item li:nth-child(5) {
+    transform: rotateY(calc(360deg/7*4)) translateZ(calc(340px*7/3.14/2));
+}
+
+.list-item li:nth-child(6) {
+    transform: rotateY(calc(360deg/7*5)) translateZ(calc(340px*7/3.14/2));
+}
+
+.list-item li:nth-child(7) {
+    transform: rotateY(calc(360deg/7*6)) translateZ(calc(340px*7/3.14/2));
+}
+

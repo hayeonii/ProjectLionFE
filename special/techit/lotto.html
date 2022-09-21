@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨기</title>
+</head>
+<body>
+    <script>
+    /* 
+        1. Math.random(); 0이상~1미만 실수(float) 
+        -> 0.xxxxx로 값이 나오게 된다
+        따라서
+        
+        2. Math.random() * 45;
+        -> 0이상~45미만 실수(float)
+
+        3. Math.random() * 45 + 1
+        -> 0은 제외하고 45는 포함해야 함
+        -> 1이상 46미만 실수(float)
+        
+        4. parseInt();
+        -> 실수(float) -> 정수(int)
+        -> 소수점은 버리고 정수로 변환
+
+        parseInt(Math.random() * 45 + 1);
+        - 1 이상 45이하 정수
+    */
+
+        // var num = Math.random() * 45 + 1;
+        // var ball1 = parseInt(num);
+        // document.write(ball1);
+
+
+        // 배열
+        // var lotto = [1,2,3,4,5,6]
+        // document.write(lotto[0]);
+        // .push() : 마지막 값 추가
+
+        // var lotto=[];
+        // lotto.push(parseInt(math.random()*45+1));
+        // lotto.push(parseInt(math.random()*45+1));
+        // lotto.push(parseInt(math.random()*45+1));
+        // lotto.push(parseInt(math.random()*45+1));
+        // lotto.push(parseInt(math.random()*45+1));
+        // lotto.push(parseInt(math.random()*45+1));
+        // document.write(lotto);
+
+        // 반복문
+        // for, while
+        
+        /* 
+            for (시작; 끝; 증가) {
+                반복하려는 코드
+            }
+
+            for (var i = 0; i < 6; i++) {
+                반복하려는 코드
+            }
+        */
+
+        // for (var i=0; i<6; i ++) {
+        //     lotto.push(parseInt(math.random()*45+1));
+
+        // }
+
+        // 조건문
+        /*
+            if(조건) {
+                참일 경우
+            }
+        */
+
+        // 만약 중복이 아니라면 .push
+
+        // .indexOf(값)
+        // 값이 있으면 위치(인덱스), 없으면 -1
+
+        // 중복 없는 값
+        // var lotto = [];
+        // for (var i=0; i<6; i++){
+        //     var num = parseInt(math.random()*45+1);
+        //     if (lotto.indexOf(num) == -1){
+        //         lotto.push(num);
+        //     }
+        // }
+
+        // 공이 6개까지 반복되어야 함
+        // while은 특정 조건까지 반복
+        // while (조건) {
+            // 반복하려는 코드
+        // }
+
+        // .length : 배열의 길이
+        // var lotto = [];
+        // while (lotto.length <6) {
+        //     for (var i=0; i<6; i++){
+        //     var num = parseInt(math.random()*45+1);
+        //     if (lotto.indexOf(num) == -1){
+        //             lotto.push(num);
+        //         }
+        //     }
+        // }
+        
+         // .sort : 배열의 값 정렬   
+         // 사전 순 정렬
+         // 오름차순 배열: .sort((a, b)=>a-b)
+
+        var lotto = [];
+        while (lotto.length <6) {
+            for (var i=0; i<6; i++){
+            var num = parseInt(math.random()*45+1);
+            if (lotto.indexOf(num) == -1){
+                    lotto.push(num);
+                }
+            }
+        }
+
+        lotto.sort((a, b)=>a-b);
+        document.write(lotto);
+        
+    </script>
+</body>
+</html>

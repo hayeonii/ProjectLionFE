@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox 커스텀</title>
+    <style>
+        .txt-hide {
+            position: absolute;
+            clip: rect(0,0,0,0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* 가상요소 만든 것 */
+        .labl-hold::before {
+            display: inline-block;
+            content: '';
+            /* content: url('../asset/img/icon_check_empty.png'); */
+            width: 22px;
+            height: 22px;
+            /* background-image: url('../asset/img/icon_check_empty.png'); */
+            /* background-image: url('../asset/img/css_sprites.png');
+            background-position: -10px -10px; */
+            /* retina */
+            background-image: url('../asset/img/css_sprites_retina.png');
+            background-position: -52px -10px;
+            vertical-align: -5px;
+            background-size: 84px 42px;
+        }
+
+        /* 가상요소 선택 */
+        /* input box가 체크되었을 때의 상태 */
+        .inp-hold:checked + .labl-hold::before{
+            /* background-image: url('../asset/img/icon_check.png'); */
+            /* background-image: url('../asset/img/css_sprites.png'); */
+            /* background-position: -52px -10px; */
+            /* retina */
+            background-image: url('../asset/img/css_sprites_retina.png');
+            background-size: 84px 42px;
+            background-position: -10px -10px;
+            /* content: url('../asset/img/icon_check.png'); */
+            /* content에 이미지 넣어도 되지만 그렇게 하면 접근성에 감산하자면 좋지 않음(이미지라고 읽음) */
+        }
+
+        /* image sprite 기법의 단점 */
+        /* 이미지를 붙이다 보면 한 판의 자체 용량이 커지게 된다 */
+        /* 관리가 어렵다 - 하나의 요소가 바뀌면 다 바꿔야 함 */
+
+        .inp-hold:focus + .labl-hold::before{
+            outline: 2px solid #000;
+            outline-offset: 5px;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- input 요소 숨기고 label 요소 연결하여 스타일링-->
+    <input id="inputHold" class="inp-hold txt-hide" type="checkbox">
+    <Label for="inputHold" class="labl-hold">선택해주세요</Label>
+</body>
+</html>

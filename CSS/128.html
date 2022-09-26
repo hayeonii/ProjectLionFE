@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        /* 반응형 이미지 */
+        img {
+            /* width: 100%; */
+
+            /* 이미지가 원본 크기 이상으로 커지지 않는다 */
+            max-width: 100%;
+        }
+
+        /* 반응형 백그라운드 이미지 */
+        article {
+            width: 100vw;
+            height: 100vh;
+            /* contain: 이미지 소실을 원하지 않음 */
+            /* cover: 다 뒤덮음 - 근데 뷰포트(콘텐츠)의 넓이에 맞게 조절이 안됨 */
+            /* -> 이럴 때 position을 center로 주면 중심 축에 맞춰서 이미지가 반응형이 됨 */
+            background: url('https://images-ext-1.discordapp.net/external/6ApVKJXhS6wxOjzaXt_eJjpsj63QJK4ifGO7TMli5ss/%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHw%253D%26w%3D1000%26q%3D80/https/images.unsplash.com/photo-1477959858617-67f85cf4f1df') center/ cover no-repeat;
+            /* 배경이 투명한 이미지를 배경으로 쓸 때 contain을 쓰는 것이 좋을 것 같단 생각 */
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="https://image.news1.kr/system/photos/2022/9/19/5584837/article.jpg" alt=""> -->
+    <article>
+
+    </article>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .one {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- style 태그를 이처럼 body 태그 내에 쓸 수 있는것인지도 몰랐는데, svg 태그를 사용할 때에만 예외적으로 가능한것인지 아니면 이처럼 body태그내에 사용할 수 있는것인데 (외부 css 파일을 사용해야 유지보수가 편리하니까)굳이 이처럼 사용하지 않는것인지 궁금합니다 -->
+    <!-- style을 body안 중간에서 사용하는 경우는 극히 드물다 -->
+    <style>
+        .two {
+            color: blue;
+        }
+
+    </style>
+
+    <!-- script를 body 안 중간에서 이런 경우는 종종 있다 -->
+    <!-- 새로운 묘듈에서만 필요한 스크립트가 있을 수 있다(템플릿상속) -->
+    <script></script>
+
+    <div class="one">hello</div>
+    <div class="two">hello</div>
+    <script></script>
+</body>
+</html>

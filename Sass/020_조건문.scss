@@ -1,0 +1,49 @@
+@use "sass:math";
+
+$one : 10px;
+$two : 100px;
+
+@mixin avatar($size, $circle: false) {
+    width: $size;
+    height: $size;
+    background-color: red;
+
+    @if $circle {
+        // 조건이 참일 때 실행될 구문
+        border-radius: $size / 2; // step 1
+        // border-radius: ($size / 2) +px; // step2
+        // border-radius: ($size / 2) + "px"; //문자열 "00px"로 들어감
+        
+        // 시스템 권고사항
+        // math.div($size, 2) or calc($size / 2)
+    } @else {
+        // 조건이 거짓일 때 실행될 구문
+        border-radius: 3px;
+    }
+}
+
+.one {
+    @include avatar(10px, true)
+}
+
+.two {
+    @include avatar(10, true)
+}
+
+.three {
+    @include avatar(10px, false)
+}
+
+.four {
+    // 기본 조건이 false로 되어있기 때문
+    @include avatar(10px)
+}
+
+// true라는 파라미터에 불리언값을 반환하는 조건식이 들어갈 수 있을까?
+.five {
+    @include avatar(10px, 100 > 10 )
+}
+
+.six {
+    @include avatar(10px, $one > $two)
+}

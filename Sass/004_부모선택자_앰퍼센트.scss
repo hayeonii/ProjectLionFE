@@ -1,0 +1,21 @@
+.box {
+    &-yellow {
+        background: yellow;
+    }
+
+    &-red {
+        background: red;
+    }
+
+    // 버튼 같은 곳에서 많이 사용
+}
+
+.btn {
+    &-submit {
+        background-color: yellow;
+    }
+
+    &-close {
+        background-color: red;
+    }
+}

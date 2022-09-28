@@ -1,0 +1,10 @@
+@debug 150 > 50; //true
+@debug 10px < 17px; //true
+@debug 1000ms <= 1s; //true
+@debug 1px == 1px; //true
+@debug 1px != 1em; //true
+
+@debug 1px == 1px; // true
+@debug 1px != 1em; // true
+@debug 1 != 1px; // true (false? 공식문서에서는 true로 나오는데 node sass 결과는 false로 나옴)
+@debug 96px == 1in; // true

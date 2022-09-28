@@ -1,0 +1,64 @@
+@function sigma($number){
+    $result: 0;
+    
+    @for $i from 1 to $number {
+        $result: $result + $i;
+    }
+
+    @return $result;
+}
+
+.one {
+    width: sigma(11)px;
+}
+
+// 질문
+// $result : #{$i + $result},  $result: $result + $i; 혹시 두개의 차이가 어떻게 생기는지 잘모르겠습니다
+
+// @function sigma($number){
+//     $result: 0;
+    
+//     @for $i from 1 to $number {
+//         $result: $result + $i; // 숫자로 처리
+//     }
+
+//     @return $result;
+// }
+
+// .one {
+//     width: sigma(11)px;
+// }
+
+// @function sigma($number){
+//     $result: 0;
+    
+//     @for $i from 1 to $number {
+//         $result: #{$result + $i}; // 문자열로 처리(#이 들어간 공간을 통째로 문자열로 처리)
+//     }
+
+//     @return $result;
+// }
+
+// .one {
+//     width: sigma(11) + px;
+//     // width: 12345678910px;
+        // 더한 후에 문자열로 처리  
+// }
+
+
+
+// @function sigma($number){
+//     $result: 0;
+    
+//     @for $i from 1 to $number {
+//         $result: #{$result} + $i;
+//     }
+
+//     @return $result;
+// }
+
+// .one {
+//     width: sigma(11) + px;
+//     // width: 012345678910px;
+        // 0부터 문자열 처리
+// }

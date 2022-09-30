@@ -74,11 +74,17 @@
             // 0.8999999999999999
 
 
-        // JS에서 큰 숫자를 사용할 때에는 BigInt를 사용한다
-        // console.log(Number.MAX_SAFE_INTEGER)
-
-        // BigInt(12312312312312312312) + BigInt(2)
-        // 123123123123123123121333n + 2n;
+        // JS에서 큰 숫자를 사용할 때에는 BigInt를 사용합니다.
+            // The proposal belongs to ECMAScript 2020, which is the 11th edition
+            // console.log(Number.MAX_SAFE_INTEGER)  // 2^53 - 1
+            // BigInt(12312312312312312312) + BigInt(2) // 제대로 작동하지 않음
+            // BigInt(Number.MAX_SAFE_INTEGER)
+            // BigInt(Number.MAX_SAFE_INTEGER) + 1000n // 제대로 작동(숫자 자체가 MAX_SAFE_INTEGER를 넘어가면 제대로 표현하지 못함)
+            // BigInt(5) + 5n
+            // BigInt(5) + 5 // error
+            // BigInt(5) / 2n // 2n (소수 표현 안됨)
+            // BigInt("10") + BigInt("10") // 큰 값을 정수로 입력받을 때에는 string으로 처리해서 받아야 함
+            
         /*
             정처기 외에 안나옴 ㅋㅋㅋ
             1bit = 0과 1을 표현할 수 있는 최소 단위

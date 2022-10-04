@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+         // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+            let a = 10;
+            a = a + 10;
+            console.log(a);
+
+            let b = 10;
+            b += 10; // b = b + 10를 줄여쓴 문법
+            console.log(b);
+
+            let c = 10;
+            ++c;
+            --c;
+
+            c++;
+            c--;
+            console.log(c);
+
+            let d = 10;
+            console.log(d++); // 10 (선할당 후증가)
+            console.log(d); // 11
+            // 연산 수행 후 연산자의 값 증가/감소
+
+            let e = 10;
+            console.log(++e); // 11 (선증가 후할당)
+            console.log(e); // 11
+            // 연산자의 값 증가/감소 후 연산 수행
+
+
+            // 숫자 타입이 아닌 피연산자에 +단항 연산자를 사용하면 피연산자를 숫자 타입으로 변환하여 반환
+            // 피연산자를 변경하는 것은 아니고 숫자 타입으로 반환한 값을 생성해 반환됨
+            // 문자열은 숫자로 타입 변환 할 수 없으므로 NaN 반환
+            // -단항 연산자는 피연산자의 부호를 반전한 값 반환
+
+            let one = '1';
+            console.log(+one); // 1
+            console.log(one); // "1"
+
+            let two = true;
+            console.log(+two); // 1
+            console.log(two); // true
+
+            let three = false;
+            console.log(+three); // 0
+            console.log(three); // false
+
+            let four = 'hello';
+            console.log(+four); // NaN
+            console.log(four); // "hello"
+
+    </script>
+</body>
+</html>

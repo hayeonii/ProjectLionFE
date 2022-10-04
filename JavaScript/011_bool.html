@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bool</title>
+</head>
+<body>
+    <script>
+        // 논리적 참, 거짓을 나타내는 true/false 뿐
+        // 조건문에 자주 사용됨
+        
+        // const(참조 변경 불가), let(변경 가능), var(X)
+        let one = true; // 다른 언어는 True인 경우도 있음
+        let two = false;
+        let three;
+        let four = null;
+        let five = Infinity; // 비교
+
+        console.log(Boolean("")) // false
+        console.log(Boolean(" ")); // true 문자열이 들어가있으면 어쨌든 true
+        console.log(Boolean(0)); // false
+        console.log(Boolean(100)); // true
+        console.log(Boolean(-100)); // true // 0 외의 다른 숫자는 true
+        console.log(Boolean(three)); // false
+        console.log(Boolean(four)); // false
+        console.log(Boolean(five)); // true
+
+
+        one = 0;
+
+        // 우리를 힘들게 하는 JS
+        console.log(Boolean([])); // true
+        console.log(Boolean({})); // true
+
+        if (one) {
+            console.log('hello')
+        } else {
+            console.log('world')
+        }
+
+    </script>
+</body>
+</html>

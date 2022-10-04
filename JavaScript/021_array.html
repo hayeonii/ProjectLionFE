@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 0. array
+        // 값의 변경이 가능하다
+        // 대부분 동일한 자료의 형태가 반복됨
+        let 과일 = ['사과', '수박', '복숭아', '딸기', '바나나']
+        console.log(과일[1]);
+        let 꺼낸과일 = 과일.pop(); // 마지막 값을 꺼냄
+        console.log(과일);
+        과일.push('멜론');
+        console.log(과일);
+        과일.push(꺼낸과일);
+        console.log(과일);
+
+
+        // 1. matrix(행렬)의 연산
+        let array = [
+            [1, 2, 3,],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        // 6이라는 값을 찾아보세요!
+        console.log(array[1][2]);
+        // 존재하지 않는 요소에 접근하면 undefined 반환됨
+
+
+        // TMI
+        function sum(x, y) {
+            return x+y
+        }
+        let test= [1,2,3]
+        let obj = {'one':1, 'two':2}
+        let  data = [console.log, sum, test, obj]
+    </script>
+</body>
+</html>

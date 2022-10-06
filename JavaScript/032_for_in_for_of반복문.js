@@ -45,10 +45,20 @@ for (const i of 'hello world') {
     console.log(i);
 }
 
+/*
+    let x = '12345'
+    let result3 = 0; 
+    for (let i = 0; i < x.length; i++) {
+    result3 += parseInt(x[i]);
+}
+*/
+
 let s = 0;
 for (const i of '12345') {
     s += parseInt(i);
 }
+
+
 
 const seat = [['피카츄' , '라이츄', '파이리' ],
               ['꼬부기' , '버터플', '야도란' ],

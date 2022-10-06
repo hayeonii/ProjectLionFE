@@ -204,6 +204,14 @@
                 return 0
             } // 객체 정렬해야 할 때 조건문으로 사용이 가능
         })
+
+        const arrNum2 = [13, 9, 10, 2];
+        let arrNum_test = [13, 9, 19, 2];
+        let test2 = [...arrNum_test].sort();   // 원본을 만지지 않음 
+
+        console.log(arrNum_test);  // [ 13, 9, 19, 2 ]
+        console.log(test2);  //  [ 13, 19, 2, 9 ]
+
         // 숫자 정렬을 위해서는 compare function(비교함수)를 집어 넣어 주어야 함
 
         // 9 - 13 ===> 음수일 때 더 큰수-작은수로 바꿔줌 ===> [9, 13, 10, 2]

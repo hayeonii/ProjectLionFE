@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실무 코드</title>
+</head>
+<body>
+    <script>
+        Array(100).fill(0);
+        Array(100).fill('');
+        Array.from('abcde');
+        Array.from('a-b-c-d-e');
+        Array.from('a'.repeat(9));
+
+        // 알고리즘 문제에 많이 사용 - flat
+        arr = [[1, 2, 3], [4, 5, 6], [7, 8, [9, 10, [11, 12]]]]
+        arr.flat(1); //  [1, 2, 3, 4, 5, 6, 7, 8, Array(3)]
+
+        // includes
+        data = ['a', 'b', 'c', 'd', 'e']
+        data.includes('a')
+            // true  
+            
+        Array(100).fill(0).map((_, index)=>index+1) // 1부터 100까지 만들어짐
+        // 변수명으로 _ 사용되는 경우?
+            // 신경 쓸 변수가 아니다 (자리를 채워주는 용도)
+
+        Array(100).fill(0).map((_, index)=>index+1).filter(i => i%3 === 0) // 3의 배수 출력
+        Array(100).fill(0).map((_, index)=>index+1).filter(i => i%3 === 0 || i%5 === 0) // 3과 5의 배수 출력
+        Array(100).fill(0).map((_, index)=>index+1).filter(i => i%3 === 0 || i%5 === 0).forEach(x => s +=x); // 누적
+
+        Array(100).fill(0).map((_, index)=>index+1).filter(i => i % 3 === 0 || i % 5 === 0).reduce((누적값, 현재값, 인덱스) => {
+                return 누적값 + 현재값
+            }, 0)
+
+        cafe = ['coffee', 'cake', 'tea', 'cookie']
+        cafe = [{
+            'item' : 'coffee',
+            'amount' : 5
+        },{
+            'item' : 'cake',
+            'amount' : 4
+        },{
+            'item' : 'tea',
+            'amount' : 7
+        },{
+            'item' : 'cookie',
+            'amount' : 3
+        }];
+        
+        index = cafe.findIndex(obj => obj.item.length <= 3)
+    </script>
+</body>
+</html>

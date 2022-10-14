@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <p></p>
+
+    <script>
+        const name = "john";
+        const txt = document.querySelector('p')
+        txt.innerHTML = name;
+
+        // 닫는 스크립트 태그 앞에 에러 나는 이유는 /가 정규표현식의 시작을 알리는 문자이기 때문
+        const name2 = "<script>alert('I am John in an annoying alert!')<\/script>";
+        txt.innerHTML = name2;
+
+        // txt.innerHTML = name2; // harmless in this case
+
+        // const name 3 = "<img src = 'x' onerror='alert(1)'"
+        const name3 = "test!!!"
+        txt.innerHTML = name3; // shows the alert
+    </script>    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <ul></ul>
+    <button>Make me MORE!</button>
+
+    <!-- ------------------- -->
+    <div id="parentElement">
+        <span id="childElement">hello guys~</span>
+    </div>
+
+    <!-- ------------------- -->
+    <strong class="sayHi">
+        반갑습니다.
+    </strong>
+
+    <script>
+        // document.createElement(target); target 요소를 생성합니다.
+        // document.createTextNode(target); target 텍스트를 생성합니다.
+        // element.appendChild(target);    target 요소를 element의 자식으로 위치합니다.
+        // element.removeChild(target);    element의 target 자식 요소를 제거합니다.
+
+        const myBtn = document.querySelector("button");
+        const myUl = document.querySelector("ul");
+
+        myBtn.addEventListener('click', function(){
+            // li 요소 생성
+            for(let i=0; i < 5; i++){
+                const myLi = document.createElement('li');
+
+                // text 노드 생성
+                const myTxt = document.createTextNode('안녕하세용!')
+
+                // 자식으로 요소 배치
+                myUl.appendChild(myLi);
+                myLi.appendChild(myTxt);
+            }
+
+            const li = document.querySelector('li');
+            // 자식 요소를 제거합니다.
+            myUl.removeChild(li);
+        })
+
+        // -------------------------------- //
+        // parentElement.insertBefore(target, location); target요소를 parentElement의 자식인 location 위치 앞으로 이동합니다.
+
+        const span = document.createElement("span");
+        const sibling = document.getElementById("childElement");
+        const parentDiv = document.getElementById("parentElement");
+        const myText = document.createTextNode('good morning!')
+        span.appendChild(myText);
+
+        // span 요소를 sibling의 앞으로 배치
+        parentDiv.insertBefore(span, sibling);
+
+        //  ----------------------------- //
+        const sayHi = document.querySelector('.sayHi');
+        sayHi.insertAdjacentHTML('beforebegin', '<span>안녕하세요 저는</span>'); // target요소의 이전 요소
+        sayHi.insertAdjacentHTML('afterbegin', '<span>재현입니다</span>'); // target요소의 자식요소
+        sayHi.insertAdjacentHTML('beforeend', '<span>면접오시면</span>'); //
+        sayHi.insertAdjacentHTML('afterend', '<span>치킨사드릴게요</span>'); // target요소의 다음 형제 요소
+    </script>
+</body>
+</html>

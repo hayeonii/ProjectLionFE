@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌개를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+
+
+    <script>
+        // const txt = document.querySelectorAll('p')
+        // const btn = document.querySelectorAll('button')
+
+        // IE는 nodelist에 forEach문 사용 불가
+        // txt.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         alert(item.textContent.slice(0, -2))
+        //     })
+        // })
+
+        // btn.forEach(item => {
+        //     const result = confirm("삭제할거임?");
+        //      event.stopPropagation();
+        //      if (result === true){
+        //          }
+        // })
+
+
+        // ------------------------- //
+
+        const txts = document.querySelectorAll('p')
+        const btns = document.querySelectorAll('button')
+
+        // IE 대응 forEach문 코드 리팩토링
+        Array.prototype.forEach.call(txts, (item) => {
+            item.addEventListener('click', () => {
+                alert(event.target.textContent.slice(0, -2))
+            })
+        })
+
+        // IE는 nodelist에 for of 문 사용 불가
+        // for (const item of txts) {
+        //     item.addEventListener('click', () => {
+        //         alert(event.target.textContent.slice(0, -2))
+        //     })
+        // }
+
+        for (const item of btns) {
+            item.addEventListener('click', (e) => {
+                const result = confirm("삭제할거임?");
+                // 버블링 차단
+                    // 상위요소에서 stopPropagation() - > 이벤트 캡처링을 막음.
+                    // 하위요소에서 stopPropagation() - > 이벤트 버블링을 막음.
+                event.stopPropagation();
+                if (result){
+                    // confirm의 default값은 true!
+                    item.parentElement.remove();
+                }
+            })
+        }
+    </script>
+</body>
+</html>

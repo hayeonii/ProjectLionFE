@@ -25,9 +25,11 @@
         // })
 
         // btn.forEach(item => {
-        //     const result = confirm("삭제할거임?");
+            //item.addEventListener('click', (e) => {
+            // const result = confirm("삭제할거임?");
         //      event.stopPropagation();
         //      if (result === true){
+        //          item.parentElement.remove();
         //          }
         // })
 
@@ -58,6 +60,7 @@
                     // 상위요소에서 stopPropagation() - > 이벤트 캡처링을 막음.
                     // 하위요소에서 stopPropagation() - > 이벤트 버블링을 막음.
                 event.stopPropagation();
+                    // alert창이 한번 더 뜨는 이유는 btn 태그의 상위 요소가 p 태그이기 때문에 버블링 과정을 거치면서 위의 반복문을 거치게 되는데, 그때 target이 btn으로 바뀌기 때문에 빈 얼럿창이 뜨게 되는 것!
                 if (result){
                     // confirm의 default값은 true!
                     item.parentElement.remove();

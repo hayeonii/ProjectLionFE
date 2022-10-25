@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+    const me = {
+        name : '웨이드',
+        address : '제주도 제주시 인다 1길',
+        phoneNum : '010-8001-6536',
+        canWalk : function(){
+            console.log('웨이드가 걷는다.');
+        },
+        teaching : function(student){
+            student.levelUp();
+        }
+    }
+
+    const student = {
+        level: 1,
+        levelUp : function(){
+            this.level++;
+        }
+    }
+
+    me.teaching(student);
+
+    // --------------------
+
+    const me2 = {
+            name : '하연',
+            address : '서울 구로구 개봉로',
+            phoneNum : '010-9894-5501',
+            canStudy : function(hayeon){
+                hayeon.hp()
+            }
+        }
+
+        const hayeon = {
+            stamina : 100,
+            hp : function(){
+                this.stamina--;
+            }
+        }
+
+        me2.canStudy(hayeon)
+
+        // --------------------
+
+        function NewFactory(name, food){
+            this.name = name;
+            this.sayYourName = function(){
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        }
+
+        // -------------------------
+
+        function newFood(food){
+            this.food = food;
+            this.eatFood = function(){
+                console.log(`오늘의 메뉴: ${food[Math.floor(Math.random()*food.length)]}`)
+            }
+        }
+
+        let food = new newFood(["마라탕", "훠궈", "김치찌개", "샐러드"])
+        food.eatFood()
+
+    </script>
+</body>
+</html>

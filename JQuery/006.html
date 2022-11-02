@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+<body>
+    <h1 class="one">hello world</h1>
+    <script>
+        // function $(value){
+        //     console.log(value);
+        // }
+
+        // $('hello world');
+
+        // $를 함수명으로 사용한 것임, 아래와 동일
+        function 함수(value){
+            console.log(value);
+        }
+
+        함수('hello world');
+
+        function $(선택자) {
+            return document.querySelector(선택자)
+        }
+
+        // console.log($('h1'))
+        // console.log($('.one'))
+
+        $('.one').innerHTML = '와우'
+    </script>
+</body>
+</html>

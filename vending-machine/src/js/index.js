@@ -1,4 +1,8 @@
 import ColaGenerator from "./components/colaGenerator.js";
+import Vendingmachine from "./components/vendingmachine.js";
 
 const colaGenerator = new ColaGenerator();
-colaGenerator.setUp();
+const vendingmachine = new Vendingmachine();
+
+await colaGenerator.setUp();
+vendingmachine.setUp();

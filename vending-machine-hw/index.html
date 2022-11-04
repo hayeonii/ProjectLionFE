@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vending machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 헤더 -->
+        <header class="header">
+            <h1 class="header-logo">
+                <img src="images/logo.png" alt="CokaCola">
+            </h1>
+        </header>
+
+        
+        <main class="main">
+            <section class="contents-select">
+                <h2 class="blind">메뉴 선택</h2>
+                <!-- 메뉴 6개 -->
+                <ul class="select-menu">
+                    <li>
+                        <!-- label 안에 figure? button 안에 figure? -->
+                        <figure>
+                            <img src="images/Original_Cola.png" alt="original cola">
+                            <figcaption class="select-menu-name">Original_Cola</figcaption>
+                        </figure>
+                        <button class="select-menu-btn">1000원</button>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/Violet_Cola.png" alt="violet cola">
+                            <figcaption class="select-menu-name">Violet_Cola</figcaption>
+                        </figure>
+                        <button class="select-menu-btn">1000원</button>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/Yellow_Cola.png" alt="yellow cola">
+                            <figcaption class="select-menu-name">Yellow_Cola</figcaption>
+                        </figure>
+                        <button class="select-menu-btn">1000원</button>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/Cool_Cola.png" alt="cool cola">
+                            <figcaption class="select-menu-name">Cool_Cola</figcaption>
+                        </figure>
+                        <button class="select-menu-btn">1000원</button>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/Green_Cola.png" alt="green cola">
+                            <figcaption class="select-menu-name">Green_Cola</figcaption>
+                        </figure>
+                        <button class="select-menu-btn">1000원</button>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/Orange_Cola.png" alt="orange cola">
+                            <figcaption class="select-menu-name">Orange_Cola</figcaption>
+                        </figure>
+                        <button class="select-menu-btn">1000원</button>
+                    </li>
+                </ul>
+
+                <!-- 선택한 메뉴 정보(돈, 획득 메뉴) -->
+                <section class="select-coin">
+                    <h2 class="blind">메뉴 계산 및 획득 메뉴</h2>
+                    <div class="select-coin-total">
+                        잔액 :
+                        <div class="select-coin-total-won">
+                            <span>1,000</span>
+                            원
+                        </div>      
+                    </div>
+                    <button class="select-coin-btn">거스름돈반환</button>
+                    <input class="select-coin-input" type="text" placeholder="입금액 입력">
+                    <button class="select-coin-btn">입금</button>
+                    <div class="select-coin-get-menu scroll-style">
+                        <ul>
+                            <li class="get-menu-list">
+                                <figure class="get-menu-name">
+                                    <img src="images/Original_Cola.png" alt="green cola">
+                                    <figcaption>Original_Cola</figcaption>
+                                </figure>
+                                <p class="get-menu-total">1</p>
+                            </li>
+                            <li class="get-menu-list">
+                                <figure class="get-menu-name">
+                                    <img src="images/Green_Cola.png" alt="green cola">
+                                    <figcaption>Green_Cola</figcaption>
+                                </figure>
+                                <p class="get-menu-total">2</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="select-coin-get-btn">획득</button>
+                </section>
+            </section>
+
+
+            <!-- 획득한 메뉴 정보 -->
+            <section class="contents-get">
+                <h2 class="blind">획득 메뉴 및 소지금</h2>
+                <div class="get-have-moeny-box">
+                    <div class="get-have-money">소지금 :
+                        <div>
+                            <span>25,000</span>
+                            원
+                        </div>
+                    </div>
+                </div>
+                <section class="get-menu">
+                    <h2 class="get-menu-title">획득한 음료</h2>
+                    <div class="get-menu-box scroll-style">
+                        <ul>
+                            <li class="get-menu-list">
+                                <figure class="get-menu-name">
+                                    <img src="images/Original_Cola.png" alt="green cola">
+                                    <figcaption>Original_Cola</figcaption>
+                                </figure>
+                                <p class="get-menu-total">1</p>
+                            </li>
+                            <li class="get-menu-list">
+                                <figure class="get-menu-name">
+                                    <img src="images/Green_Cola.png" alt="green cola">
+                                    <figcaption>Green_Cola</figcaption>
+                                </figure>
+                                <p class="get-menu-total">2</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="get-menu-total-money">총금액 : <span>9,000</span> 원</p>
+                </section>
+            </section>
+        </main>    
+    </div>
+</body>
+</html>
+
+<!-- 
+    질문 목록
+    1. 선택했을 때 나오는 CSS(보라색 border&품절) JS 후에 하는 것이 나은지
+    2. 메뉴 선택 list 안에 figure-button 형태로 구현했는데 값 받아올 때 어떤 방식으로 하는 게 더 편한 것인지 모르겠음
+    3. 잔액도 바뀌어야 하는데 이럴 경우 어떻게 구현하는 것이 좋은가? (div 태그가 너무 많이 들어간 것 같다)
+-->

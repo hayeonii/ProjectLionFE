@@ -135,6 +135,11 @@ body {
     border-radius: 5px;
 }
 
+.btn-get {
+    background-color: #6327FE;
+    color: #fff;
+}
+
 .cont-buy .btn-return,
 .cont-buy .btn-put,
 .cont-buy .btn-get {

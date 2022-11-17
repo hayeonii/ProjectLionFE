@@ -46,7 +46,7 @@ function Blog(){
 }
 
 function HojunIndex(){
-    const location = useLocation();
+  const location = useLocation();
   console.log(location)
   return <h1>hello Hojun index</h1>
 }

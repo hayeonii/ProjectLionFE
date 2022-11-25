@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>회원가입</title>
+</head>
+<body>
+    <div id="root">
+        <section class="email-pw">
+            <h2 class="main-title">이메일로 회원가입</h2>
+            <div class="input-container">
+                <label for="emailInput">이메일</label>
+                <input type="email" id="emailInput" name="email" data-state="0" placeholder="이메일 주소를 알려주세요.">
+            </div>
+            <div class="input-container input-container-pw">
+                <label for="passwordInput">비밀번호</label>
+                <input type="password" name="password" id="passwordInput" data-state="0" placeholder="비밀번호를 설정해 주세요.">
+            </div>
+            <button type="button" class="next-btn">다음</button>
+        </section>
+
+        <section class="profile">
+            <h2 class="main-title join-profile-title">프로필 설정</h2>
+            <p class="profile-info-txt">나중에 언제든지 변경할 수 있습니다.</p>
+            <label for="profileImg">
+                <img src="https://mandarin.api.weniv.co.kr/Ellipse.png" alt="" srcset="" id="imagePre">
+            </label>
+            <input type="file" id="profileImg" name="image" accept="image/*" class="ir" />
+            <div class="input-container">
+                <label for="userNameInput">사용자 이름</label>
+                <input type="text" id="userNameInput" name="username" data-state="0" placeholder="2~10자 이내여야 합니다.">
+            </div>
+            <div class="input-container">
+                <label for="userIdInput">계정 ID</label>
+                <input type="text" id="userIdInput" name="accountname" data-state="0" placeholder="영문, 숫자, 특수문자(,), (_)만 사용 가능합니다.">
+            </div>
+            <div class="input-container input-container-intro">
+                <label for="userIntroInput">소개</label>
+                <input type="text" id="userIntroInput" name="intro" data-state="1" placeholder="자신과 판매할 상품에 대해 소개해 주세요.">
+            </div>
+            <button type="button" class="submit-btn">감귤마켓 시작하기</button>
+        </section>
+    </div>
+</body>
+<script>
+const submitBtn = document.querySelector(".submit-btn");
+const onClick = async () => {
+    const inputs = document.querySelectorAll("#root input");
+    // 데이터 만들기
+    const data = [...inputs].reduce((data,inputEl)=>{
+        if(inputEl.name == "profile-img"){
+            return data;
+        }
+        data[inputEl.name] = inputEl.value;
+        return data
+    },{})
+
+    // 데이터에 이미지 추가하기
+    const imagePre = document.querySelector("#imagePre");
+    data["image"] = imagePre.src;
+
+    // 회원가입 요청 api 명세맞춰서 데이터 가공하기!
+    const userData = {"user":data}
+
+    // 잠깐!! fetch 이해하기 -----------------------------------
+    const 요청명세생성기 = (배송형태,요청사항,주문정보) =>{
+        const 뭔가데이터오브젝트 = {
+            method:배송형태,// post, get, delete 등 적기
+            headers:요청사항,
+            body:JSON.stringify(주문정보)//body data 문자열형태로 넣기
+        }
+        return 뭔가데이터오브젝트
+    }
+    const 가게 = "http://146.56.183.55:5050/user"
+    const 요청명세 = 요청명세생성기("POST",{"Content-type" : "application/json"},userData)
+
+    fetch(가게,요청명세).then((res)=>res.json()).then((json)=>console.log(json))
+    // -----------------------------------------------------
+    
+    /*
+    // 여기부터
+    // 드디어 요청하기
+    fetch("https://mandarin.api.weniv.co.kr/user",{
+        method:"POST", //post, get, delete 등 적기
+        headers:{
+            "Content-type" : "application/json" // header 채우기
+        },
+        body:JSON.stringify(userData) // body data 문자열 형태로 넣기
+        // promise // 기다려야됨... 비동기임... 기다려
+    }).then((res)=> { // 다기다리고 할일
+        // promise 완료되면 json 요청, 다시 promise 반환
+        return res.json() // 이녀석도 비동기임... 기다려..
+        // 여기서 또 기다려야되네
+    }).then((json)=>{ // 다 기다리고 할 일...
+        // promise 반환 후 출력
+        console.log(json)
+    })
+    // 여기까지 비동기로 움직이는 중~~~
+    */
+    
+    console.log("안녕하세요저는제할일하겠슴다")
+
+    //  기다려~~
+    const res = await fetch("http://146.56.183.55:5050/user",{
+        method:"POST",
+        headers:{
+            "Content-type" : "application/json"
+        },
+        body:JSON.stringify(userData)
+    }); // 다 기다렸니?
+
+    // ㅇㅋ 값 줄게 그리고 기다려~
+    const json = await res.json()
+    // 다 기다렸니? 값 주껭
+    console.log(json)
+
+    /*
+    .then((res) => {
+        return res.json()
+    }). then ((json) => {
+        console.log(json)
+    }).then (console.log ("안녕하세요저는제할일하겠슴다"))
+    */
+}
+
+// 이미지 업로드 함수 만들기
+// 아직 회원가입할 때 이미지를 만들 수가 없어요 ㅠㅠ
+// 1. file이 change 되었을 때 바뀐 파일을 업로드하고 반환된 주소를 이용하자. (이게 더 쉬움)
+// 2. 회원가입 요청시 file을 업로드하자!그리고 반환받은 주소를 이용하자. (이게 더 예쁨)
+
+// 1번으로 ㄱㄱ
+const fileOnChange = async (e) => {
+    // 파일 하나 꺼내오기
+    const imageFile = e.target.files[0];
+    // formdata 만들기
+    const formData = new FormData();
+    // 폼데이터에 내 데이터 추가하기
+    // 폼데이터.append("키", "값")
+    formData.append("image", imageFile);
+    // 요청하기
+    const res = await fetch("http://146.56.183.55:5050/image/uploadfile",{
+        method:"POST",
+        body:formData
+    });
+
+    // json 꺼내기
+    const json = await res.json()
+    console.log(json)
+    // 이미지 미리보기 요소 선택
+    const imagePre = document.querySelector("#imagePre")
+    imagePre.src = "http://146.56.183.55:5050/" + json.filename
+}
+
+const imgInput = document.querySelector("#profileImg")
+imgInput.addEventListener("change", fileOnChange)
+
+const imageUpload = () => {
+
+}
+
+// 이벤트 등록하기
+submitBtn.addEventListener("click",onClick);
+
+</script>
+</html>

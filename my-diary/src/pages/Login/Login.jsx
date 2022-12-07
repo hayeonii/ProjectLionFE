@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useLogin } from '../../hooks/useLogin';
 import styles from './Login.module.css'
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { error, isPending, login } = useLogin();
 
     const handleData = (event) => {
         // console.log(event.target.type)
@@ -17,7 +19,7 @@ export default function Login() {
     const handleSubmit = (event) => {
         // 기본 동작 중지
         event.preventDefault();
-        console.log(email, password)
+        login(email, password);
     }
 
     return (
@@ -31,7 +33,9 @@ export default function Login() {
                 <label htmlFor='myPassword'>password :</label>
                 <input type="password" id='myPassword' required value={password} onChange={handleData}/>
 
-                <button type='submit' className={styles.btn}>로그인</button>
+                {!isPending && <button type='submit' className={styles.btn}>로그인</button>}
+                {isPending && <strong>로그인중입니다</strong>}
+                {error && <strong>{error}</strong>}
             </fieldset>
         </form>
     )

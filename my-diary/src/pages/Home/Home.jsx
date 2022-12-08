@@ -1,15 +1,22 @@
 import DiaryForm from './DiaryForm'
+import DiaryList from './DiaryList'
 import styles from './Home.module.css'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import { useCollection } from '../../hooks/useCollection'
 
 export default function Home() {
+    const {user} = useAuthContext()
+    const {documents, error} = useCollection('myDiary', ["uid", "==", user.uid])
+
     return (
         <main className={styles.cont}>
             <aside className={styles.side_menu}>
-                <DiaryForm />
+                <DiaryForm uid={user.uid}/>
             </aside>
             <ul className={styles.content_list}>
                 {/* 사용자가 이전에 작성한 일기 목록 */}
-                다이어리 리스트
+                {error && <strong>{error}</strong>}
+                {documents && <DiaryList diaries={documents} />}
             </ul>
         </main>
     )

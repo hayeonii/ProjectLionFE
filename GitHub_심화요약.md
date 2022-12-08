@@ -1,14 +1,11 @@
-## GUI SW
-- 소스트리 (권고)
-- 깃크라켄
-- 깃허브 데스크탑 (비사용 권고)
-- https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+## 1. GUI SW
+
+-   소스트리 (권고)
+-   깃크라켄
+-   깃허브 데스크탑 (비사용 권고)
+-   https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
 
 ## 2. branch 만들기 및 merge test
-- `git remote -v` : 현재 연결된 레포지토리 확인
-- `git branch` : 브랜치 목록 확인
-- `git branch a` : a 브랜치 생성
-- `git checkout a` : a 브랜치로 옮김
 
 ```shell
 (main) $ git branch // 브랜치 목록 확인
@@ -45,6 +42,7 @@
 ```
 
 ## 3. conflict test
+
 ```shell
 (main) $ git add .
 (main) $ git commit -m 'main1'
@@ -52,6 +50,7 @@
 (main) $ git branch a
 (main) $ git branch b
 (main) $ git checkout a
+
 // 파일 수정 README.md에 hello -> hello1
 (a) git add .
 (a) git commit -m 'a1'
@@ -68,10 +67,47 @@
 
 (main) git merge a
 (main) git merge b // conflict
-// 메모장 열고 아래 텍스트 수정 (VSC에서 4개를 클릭해보자!)
+
+// 메모장 여시고 아래 텍스트를 수정해주세요. visual studio code에서 4개 다 클릭 해보세요.
 <<<<<<< HEAD
 hello1
 =======
 hello2
->>>>>>> 
+>>>>>>> b
+```
+
+## 4. amend, stash, reset, cherry-pick
+
+```shell
+$ git add amend.txt
+$ git commit --amend
+
+//////////
+
+$ touch test.txt
+$ git stash
+$ git status
+$ git stash pop
+
+//////////
+
+$ git log
+$ git reset --hard 025cd1d98da39af2a819c43e17b3d5f2d553649d
+$ git push -f origin main
+
+//////////
+
+$ git revert <직전커밋 id>
+
+//////////
+
+$ git branch cherry
+$ git checkout cherry
+$ 파일 수정 -> commit
+$ 파일 생성 -> commit
+$ git push
+$ git log
+$ git switch main
+$ git cherry-pick logid
+
 ```
